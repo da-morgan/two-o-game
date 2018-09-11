@@ -1,22 +1,11 @@
-#passes a question and an answer to the game
-
 class Question
+    attr_reader :question, :game_answer
 
-    def generate_number
-        rand(1..20)
-    end
-
-    def generate_question_and_answer
-        val1 = generate_number
-        val2 = generate_number
-
-        question = "What is #{val1} + #{val2}"
-        game_answer = val1+val2
-        return question, game_answer
+    def initialize
+        @val1 = rand(1..20)
+        @val2 = rand(1..20)
+        @question = "What is #{@val1} + #{@val2}"
+        @game_answer = @val1+@val2
     end
 
 end
-
-question1 = Question.new
-
-puts question1.generate_question_and_answer
